@@ -38,7 +38,13 @@ class Ship():
             self.rect.centery += self.ai_settings.ship_speed_factor
 
         # Обновление атрибута rect на основании self.center.
-        self.rect.centerx = self.center 
+        self.rect.centerx = self.center
     #----------------------------------------------------------------   
     def blitme(self):
         self.screen.blit(self.image, self.rect)
+    #----------------------------------------------------------------
+    def center_ship(self):
+    #Размещает корабль в центре нижней стороны.
+        self.rect.centerx = self.screen_rect.centerx
+        self.rect.centery = self.screen_rect.centery
+        self.rect.bottom = self.screen_rect.bottom
